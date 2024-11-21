@@ -5,24 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medische Gegevens</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <div class="container">
         <h1>Medische Gegevens</h1>
+
+        <!-- Persoonlijke informatie -->
         <div class="card" id="personal-info">
             <h2>Persoonlijke Informatie</h2>
             <p><strong>Naam:</strong> <span id="first-name"></span></p>
             <p><strong>Achternaam:</strong> <span id="last-name"></span></p>
             <p><strong>Middel Naam:</strong> <span id="middle-name"></span></p>
+            <p><strong>Geboortedatum:</strong> <span id="birth-date"></span></p>
+            <p><strong>Geslacht:</strong> <span id="gender"></span></p>
         </div>
+
+        <!-- Contactgegevens -->
+        <div class="card" id="contact-info">
+            <h2>Contactgegevens</h2>
+            <label for="address"><strong>Adres:</strong></label>
+            <input type="text" id="address" placeholder="Bijv. Hoofdstraat 123" />
+
+            <label for="zipcode"><strong>Postcode:</strong></label>
+            <input type="text" id="zipcode" placeholder="Bijv. 1234 AB" />
+
+            <label for="phone"><strong>Telefoonnummer:</strong></label>
+            <input type="text" id="phone" placeholder="Bijv. 0612345678" />
+
+            <label for="emergency"><strong>Noodgevalnummer:</strong></label>
+            <input type="text" id="emergency" placeholder="Bijv. 0612345678" />
+
+            <label for="donor"><strong>Donorstatus:</strong></label>
+            <select id="donor">
+                <option value="yes">Ja</option>
+                <option value="no">Nee</option>
+                <option value="unknown">Onbekend</option>
+            </select>
+        </div>
+
+        <!-- Medische informatie -->
         <div class="card" id="medical-info">
             <h2>Medische Informatie</h2>
-            <p><strong>Bloedgroep:</strong> <span id="blood-type"></span></p>
-            <p><strong>Allergieën:</strong> <span id="allergies"></span></p>
+            <label for="blood-type"><strong>Bloedgroep:</strong></label>
+            <select id="blood-type">
+                <option value="unknown">Onbekend</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+
+            <label for="allergies"><strong>Allergieën:</strong></label>
+            <input type="text" id="allergies" placeholder="Bijv. Pinda's, Bijensteken" />
+
+            <label for="conditions"><strong>Medische Condities:</strong></label>
+            <input type="text" id="conditions" placeholder="Bijv. Astma, Diabetes" />
+
+            <label for="medication"><strong>Medicatie:</strong></label>
+            <input type="text" id="medication" placeholder="Bijv. Paracetamol, 500 mg, 2x per dag" />
         </div>
+
+        <!-- Opslaan -->
+        <button id="save-button">Opslaan</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 
