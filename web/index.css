@@ -16,7 +16,7 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px black;
     margin-bottom: 30px;
 }
 
@@ -28,12 +28,12 @@ h1 {
 .card {
     margin: 20px 0;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid black;
     border-radius: 6px;
 }
 
 .card h2 {
-    color: #333;
+    color: black;
     margin-bottom: 10px;
 }
 
@@ -47,7 +47,7 @@ input[type="text"] {
     width: 100%;
     padding: 8px;
     margin: 5px 0;
-    border: 1px solid #ddd;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -73,7 +73,7 @@ select {
     width: 100%;
     padding: 8px;
     margin: 5px 0;
-    border: 1px solid #ddd;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
     background-color: #fff;
