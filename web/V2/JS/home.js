@@ -28,7 +28,10 @@ const medicalHistory = {
 
 // Initializing vaccinations array to ensure no default value
 const vaccinations = {
-    vaccines: [] // Updated to include objects with name and date
+    vaccines: [{
+        name: "COVID-19 Vaccine",
+        date: "2023-01-15"
+    }] // Updated to include objects with name and date
 };
 
 function addVaccine() {
@@ -81,6 +84,7 @@ function updateVaccineList() {
         vaccineList.appendChild(vaccineItem);
     });
 }
+updateVaccineList()
 
 
 function loadMedicalData() {
