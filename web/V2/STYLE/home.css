@@ -10,10 +10,11 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    /* Veranderd naar column voor betere layout */
     flex: 1;
     padding-left: 220px;
-    /* Maak ruimte voor de sidebar */
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .sidebar {
@@ -27,7 +28,6 @@ body {
     left: 0;
     overflow-y: auto;
     z-index: 1000;
-    /* Zorg ervoor dat de sidebar boven andere elementen ligt */
 }
 
 .sidebar h2 {
@@ -71,9 +71,15 @@ input[type="text"], select, textarea {
     display: block;
     width: 100%;
     margin: 10px 0;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    /* Prevent resizing on the x-axis */
 }
 
 button {
@@ -87,8 +93,57 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+#vaccination-list div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 45px;
+    /* Gap between vaccination items */
+}
+
+#vaccination-list div span {
+    flex: 1;
+}
+
+#vaccination-list div button {
+    margin-top: 0px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    margin-right: 10px;
+    font-size: 20px;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#vaccination-list div button:hover {
+    background-color: #c82333;
+}
+
+
+#new-vaccine, #vaccine-date {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }

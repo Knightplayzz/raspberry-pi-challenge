@@ -6,118 +6,171 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medische Gegevens</title>
     <link rel="stylesheet" href="../STYLE/home.css">
+    <link id="dark-mode-css" rel="stylesheet" href="../STYLE/darkmode.css">
+    <link rel="stylesheet" href="../STYLE/login.css">
 </head>
 
 <body>
+
+    <div id="login-section">
+        <h2>Doctor Access</h2>
+        <form id="pincode-form">
+            <input type="password" id="pincode" placeholder="Enter Pincode" required />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
     <div class="container">
-        <h1>Medische Gegevens</h1>
 
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="#" onclick="showPage('personal-info')">Persoonlijke Informatie</a></li>
-                <li><a href="#" onclick="showPage('contact-info')">Contactgegevens</a></li>
-                <li><a href="#" onclick="showPage('medical-info')">Medische Informatie</a></li>
-                <li><a href="#" onclick="showPage('history-info')">Medische Geschiedenis</a></li>
-                <li><a href="#" onclick="showPage('vaccination-info')">Vaccinaties</a></li>
-            </ul>
-        </div>
-
-        <!-- Persoonlijke informatie -->
-        <div class="card" id="personal-info">
-            <h2>Persoonlijke Informatie</h2>
-            <p><strong>Naam:</strong> <span id="first-name"></span></p>
-            <p><strong>Achternaam:</strong> <span id="last-name"></span></p>
-            <p><strong>Middel Naam:</strong> <span id="middle-name"></span></p>
-            <p><strong>Geboortedatum:</strong> <span id="birth-date"></span></p>
-            <p><strong>Geslacht:</strong> <span id="gender"></span></p>
-        </div>
-
-        <!-- Contactgegevens -->
-        <div class="card" id="contact-info">
-            <h2>Contactgegevens</h2>
-            <label for="address"><strong>Adres:</strong></label>
-            <input type="text" id="address" placeholder="Bijv. Hoofdstraat 123" oninput="validateAddress()" />
-
-            <label for="zipcode"><strong>Postcode:</strong></label>
-            <input type="text" id="zipcode" placeholder="Bijv. 1234 AB" oninput="validatePostalCode()" />
-
-            <label for="phone"><strong>Telefoonnummer:</strong></label>
-            <input type="text" id="phone" placeholder="Bijv. 0612345678" oninput="validatePhoneNumber()" />
-
-            <label for="emergency"><strong>Noodgevalnummer:</strong></label>
-            <input type="text" id="emergency" placeholder="Bijv. 0612345678" />
-
-            <label for="donor"><strong>Donorstatus:</strong></label>
-            <select id="donor">
-                <option value="yes">Ja</option>
-                <option value="no">Nee</option>
-                <option value="unknown">Onbekend</option>
-            </select>
-        </div>
-
-        <!-- Medische informatie -->
-        <div class="card" id="medical-info">
-            <h2>Medische Informatie</h2>
-            <label for="blood-type"><strong>Bloedgroep:</strong></label>
-            <select id="blood-type">
-                <option value="unknown">Onbekend</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-            </select>
-
-            <label for="allergies"><strong>Allergieën:</strong></label>
-            <input type="text" id="allergies" placeholder="Bijv. Pinda's, Bijensteken" />
-
-            <label for="conditions"><strong>Medische Condities:</strong></label>
-            <input type="text" id="conditions" placeholder="Bijv. Astma, Diabetes" />
-
-            <label for="medication"><strong>Medicatie:</strong></label>
-            <input type="text" id="medication" placeholder="Bijv. Paracetamol, 500 mg, 2x per dag" />
-
-            <!-- Opmerkingen -->
-            <label for="medical-notes"><strong>Opmerkingen:</strong></label>
-            <textarea id="medical-notes" placeholder="Opmerkingen over medische informatie"></textarea>
-        </div>
-
-        <!-- Medische Geschiedenis -->
-        <div class="card" id="history-info">
-            <h2>Medische Geschiedenis</h2>
-            <label for="history"><strong>Eerdere Operaties:</strong></label>
-            <input type="text" id="history" placeholder="Bijv. Hartoperatie, 2015" />
-
-            <label for="hospitalizations"><strong>Ziekenhuisopnames:</strong></label>
-            <input type="text" id="hospitalizations" placeholder="Bijv. Longontsteking, 2018" />
-
-            <!-- Opmerkingen -->
-            <label for="history-notes"><strong>Opmerkingen:</strong></label>
-            <textarea id="history-notes" placeholder="Opmerkingen over medische geschiedenis"></textarea>
-        </div>
-
-        <!-- Vaccinaties -->
-        <div class="card" id="vaccination-info">
-            <h2>Vaccinaties</h2>
-
-            <div id="vaccination-list">
-                <!-- Dynamically added vaccinations will appear here -->
+        <div id="content-section" style="display: none;">
+            <div class="header">
+                <h1>Medische Gegevens</h1>
+                <label class="dark-mode-toggle">
+                    <input type="checkbox" id="dark-mode-switch" onchange="toggleDarkMode()" />
+                    <span class="slider"></span>
+                </label>
             </div>
 
-            <label for="new-vaccine"><strong>Nieuwe vaccinatie:</strong></label>
-            <input type="text" id="new-vaccine" placeholder="Bijv. BMR, 2020" />
-            <button type="button" onclick="addVaccine()">Voeg vaccinatie toe</button>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#" onclick="showPage('personal-info')">Persoonlijke Informatie</a></li>
+                    <li><a href="#" onclick="showPage('contact-info')">Contactgegevens</a></li>
+                    <li><a href="#" onclick="showPage('medical-info')">Medische Informatie</a></li>
+                    <li><a href="#" onclick="showPage('history-info')">Medische Geschiedenis</a></li>
+                    <li><a href="#" onclick="showPage('vaccination-info')">Vaccinaties</a></li>
+                    <li><a href="#" onclick="showPage('lifestyle-info')">Leefstijl</a></li>
+                </ul>
+            </div>
+            <!-- The content that should be visible only after entering the correct pincode -->
+            <h2>Medical Information</h2>
+
+            <!-- Persoonlijke informatie -->
+            <div class="card" id="personal-info">
+                <h2>Persoonlijke Informatie</h2>
+                <p><strong>Naam:</strong> <span id="first-name"></span></p>
+                <p><strong>Achternaam:</strong> <span id="last-name"></span></p>
+                <p><strong>Middel Naam:</strong> <span id="middle-name"></span></p>
+                <p><strong>Geboortedatum:</strong> <span id="birth-date"></span></p>
+                <p><strong>Geslacht:</strong> <span id="gender"></span></p>
+            </div>
+
+            <!-- Contactgegevens -->
+            <div class="card" id="contact-info">
+                <h2>Contactgegevens</h2>
+                <label for="address"><strong>Adres:</strong></label>
+                <input type="text" id="address" placeholder="Bijv. Hoofdstraat 123" oninput="validateAddress()" />
+
+                <label for="zipcode"><strong>Postcode:</strong></label>
+                <input type="text" id="zipcode" placeholder="Bijv. 1234 AB" oninput="validatePostalCode()" />
+
+                <label for="phone"><strong>Telefoonnummer:</strong></label>
+                <input type="text" id="phone" placeholder="Bijv. 0612345678" oninput="validatePhoneNumber()" />
+
+                <label for="emergency"><strong>Noodgevalnummer:</strong></label>
+                <input type="text" id="emergency" placeholder="Bijv. 0612345678" />
+
+            </div>
+
+            <!-- Medische informatie -->
+            <div class="card" id="medical-info">
+                <h2>Medische Informatie</h2>
+                <label for="blood-type"><strong>Bloedgroep:</strong></label>
+                <select id="blood-type">
+                    <option value="unknown">Onbekend</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+
+                <label for="donor"><strong>Donorstatus:</strong></label>
+                <select id="donor">
+                    <option value="yes">Ja</option>
+                    <option value="no">Nee</option>
+                    <option value="unknown">Onbekend</option>
+                </select>
+
+                <label for="allergies"><strong>Allergieën:</strong></label>
+                <input type="text" id="allergies" placeholder="Bijv. Pinda's, Bijensteken" />
+
+                <label for="conditions"><strong>Medische Condities:</strong></label>
+                <input type="text" id="conditions" placeholder="Bijv. Astma, Diabetes" />
+
+                <label for="medication"><strong>Medicatie:</strong></label>
+                <input type="text" id="medication" placeholder="Bijv. Paracetamol, 500 mg, 2x per dag" />
+
+                <!-- Opmerkingen -->
+                <label for="medical-notes"><strong>Opmerkingen:</strong></label>
+                <textarea id="medical-notes" placeholder="Opmerkingen over medische informatie"></textarea>
+            </div>
+
+            <!-- Medische Geschiedenis -->
+            <div class="card" id="history-info">
+                <h2>Medische Geschiedenis</h2>
+                <label for="history"><strong>Eerdere Operaties:</strong></label>
+                <input type="text" id="history" placeholder="Bijv. Hartoperatie, 2015" />
+
+                <label for="hospitalizations"><strong>Ziekenhuisopnames:</strong></label>
+                <input type="text" id="hospitalizations" placeholder="Bijv. Longontsteking, 2018" />
+
+                <!-- Opmerkingen -->
+                <label for="history-notes"><strong>Opmerkingen:</strong></label>
+                <textarea id="history-notes" placeholder="Opmerkingen over medische geschiedenis"></textarea>
+            </div>
+
+            <!-- Vaccinaties -->
+            <div class="card" id="vaccination-info">
+                <h2>Vaccinaties</h2>
+
+                <label for="new-vaccine"><strong>Nieuwe vaccinatie:</strong></label>
+                <input type="text" id="new-vaccine" placeholder="Naam vaccin, bijv. BMR" />
+
+                <label for="vaccine-date"><strong>Datum vaccinatie:</strong></label>
+                <input type="date" id="vaccine-date" />
+
+                <button type="button" onclick="addVaccine()">Voeg vaccinatie toe</button>
+
+                <div id="vaccination-list" style="margin-top: 15px;">
+                    <!-- Dynamically added vaccinations will appear here -->
+                </div>
+            </div>
+
+            <div class="card" id="lifestyle-info">
+                <h2>Leefstijl</h2>
+                <label for="smoking-status"><strong>Rookt u?</strong></label>
+                <select id="smoking-status">
+                    <option value="no">Nee</option>
+                    <option value="yes">Ja</option>
+                    <option value="unknown">Onbekend</option>
+                </select>
+
+                <label for="alcohol-use"><strong>Alcoholgebruik:</strong></label>
+                <select id="alcohol-use">
+                    <option value="no">Nee</option>
+                    <option value="occasionally">Af en toe</option>
+                    <option value="frequently">Regelmatig</option>
+                </select>
+
+                <label for="diet"><strong>Dieetvoorkeuren:</strong></label>
+                <input type="text" id="diet" placeholder="Bijv. Vegetarisch, Glutenvrij" />
+
+                <label for="exercise"><strong>Beweging:</strong></label>
+                <input type="text" id="exercise" placeholder="Bijv. 3x per week sporten" />
+            </div>
         </div>
+
 
         <!-- Opslaan -->
         <button id="save-button">Opslaan</button>
     </div>
-
-    <script src="../JS/home.js"></script>
 </body>
+<script src="../JS/home.js"></script>
+<script src="../JS/darkmode.js"></script>
+<script src="../JS/login.js"></script>
 
 </html>

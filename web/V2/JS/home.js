@@ -26,33 +26,62 @@ const medicalHistory = {
     hospitalizations: "Longontsteking, 2018"
 };
 
+// Initializing vaccinations array to ensure no default value
 const vaccinations = {
-    vaccines: ["BMR, 2020"]
+    vaccines: [] // Updated to include objects with name and date
 };
 
 function addVaccine() {
-    const newVaccine = document.getElementById("new-vaccine").value;
-    if (newVaccine) {
-        vaccinations.vaccines.push(newVaccine);
-        updateVaccineList();
+    const vaccineName = document.getElementById("new-vaccine").value.trim();
+    const vaccineDate = document.getElementById("vaccine-date").value.trim();
+
+    if (!vaccineName || !vaccineDate) {
+        alert("Vul zowel de naam als de datum van de vaccinatie in.");
+        return;
     }
+
+    vaccinations.vaccines.push({ name: vaccineName, date: vaccineDate });
+    updateVaccineList();
+
+    // Clear input fields
     document.getElementById("new-vaccine").value = '';
+    document.getElementById("vaccine-date").value = '';
 }
 
 function removeVaccine(index) {
-    vaccinations.vaccines.splice(index, 1);
-    updateVaccineList();
+    const vaccine = vaccinations.vaccines[index];
+    const confirmRemoval = confirm(
+        `Weet je zeker dat je vaccinatie "${vaccine.name}" van ${vaccine.date} wilt verwijderen?`
+    );
+
+    if (confirmRemoval) {
+        vaccinations.vaccines.splice(index, 1);
+        updateVaccineList();
+    }
 }
 
 function updateVaccineList() {
     const vaccineList = document.getElementById("vaccination-list");
     vaccineList.innerHTML = ''; // Clear current list
+
     vaccinations.vaccines.forEach((vaccine, index) => {
         const vaccineItem = document.createElement("div");
-        vaccineItem.innerHTML = `${vaccine} <button onclick="removeVaccine(${index})">Verwijder</button>`;
+
+        // Name and date display
+        const vaccineText = document.createElement("span");
+        vaccineText.textContent = `${vaccine.name} (${vaccine.date})`;
+
+        // Remove button
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "X";
+        removeButton.onclick = () => removeVaccine(index);
+
+        vaccineItem.appendChild(vaccineText);
+        vaccineItem.appendChild(removeButton);
         vaccineList.appendChild(vaccineItem);
     });
 }
+
 
 function loadMedicalData() {
     document.getElementById("first-name").textContent = personalInfo.firstName;
