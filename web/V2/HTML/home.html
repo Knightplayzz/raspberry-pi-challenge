@@ -26,7 +26,7 @@
             <div class="header">
                 <h1>Medische Gegevens</h1>
                 <label class="dark-mode-toggle">
-                    <input type="checkbox" id="dark-mode-switch" onchange="toggleDarkMode()" />
+                    <input type="checkbox" id="dark-mode-switch" onchange="toggleDarkMode()" checked />
                     <span class="slider"></span>
                 </label>
             </div>
@@ -42,8 +42,6 @@
                     <li><a href="#" onclick="showPage('lifestyle-info')">Leefstijl</a></li>
                 </ul>
             </div>
-            <!-- The content that should be visible only after entering the correct pincode -->
-            <h2>Medical Information</h2>
 
             <!-- Persoonlijke informatie -->
             <div class="card" id="personal-info">
@@ -162,11 +160,12 @@
                 <label for="exercise"><strong>Beweging:</strong></label>
                 <input type="text" id="exercise" placeholder="Bijv. 3x per week sporten" />
             </div>
+            <button id="save-button">Opslaan</button>
         </div>
 
 
         <!-- Opslaan -->
-        <button id="save-button">Opslaan</button>
+
     </div>
 </body>
 <script src="../JS/home.js"></script>

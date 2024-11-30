@@ -17,6 +17,10 @@ body {
     padding-bottom: 20px;
 }
 
+.header h1 {
+    margin: 5px;
+}
+
 .sidebar {
     width: 150px;
     background-color: #007bff;
@@ -63,6 +67,10 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+#personal-info {
+    margin-bottom: 0;
+}
+
 .card.active {
     display: block;
 }
@@ -78,13 +86,13 @@ input[type="text"], select, textarea {
 }
 
 textarea {
-    resize: none;
+    resize: vertical;
     /* Prevent resizing on the x-axis */
 }
 
 button {
     display: block;
-    margin-top: 20px;
+    margin-top: 0px;
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -108,7 +116,6 @@ button:hover {
     border-radius: 5px;
     margin-bottom: 10px;
     height: 45px;
-    /* Gap between vaccination items */
 }
 
 #vaccination-list div span {
