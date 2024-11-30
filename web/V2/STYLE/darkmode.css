@@ -2,6 +2,7 @@
 body.dark-mode {
     background-color: #121212;
     color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 
 body.dark-mode .header h1 {

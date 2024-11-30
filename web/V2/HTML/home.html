@@ -14,6 +14,7 @@
 
     <div id="login-section">
         <h2>Doctor Access</h2>
+        <div id="login-error" class="error-message">Incorrect pincode. Please try again.</div>
         <form id="pincode-form">
             <input type="password" id="pincode" placeholder="Enter Pincode" required />
             <button type="submit">Submit</button>
@@ -46,12 +47,26 @@
             <!-- Persoonlijke informatie -->
             <div class="card" id="personal-info">
                 <h2>Persoonlijke Informatie</h2>
-                <p><strong>Naam:</strong> <span id="first-name"></span></p>
-                <p><strong>Achternaam:</strong> <span id="last-name"></span></p>
-                <p><strong>Middel Naam:</strong> <span id="middle-name"></span></p>
-                <p><strong>Geboortedatum:</strong> <span id="birth-date"></span></p>
-                <p><strong>Geslacht:</strong> <span id="gender"></span></p>
+                <label for="first-name"><strong>Naam:</strong></label>
+                <input id="first-name" type="text" />
+
+                <label for="last-name"><strong>Achternaam:</strong></label>
+                <input id="last-name" type="text" />
+
+                <label for="middle-name"><strong>Middel Naam:</strong></label>
+                <input id="middle-name" type="text" />
+
+                <label for="birth-date"><strong>Geboortedatum:</strong></label>
+                <input id="birth-date" type="text" />
+
+                <label for="gender"><strong>Geslacht:</strong></label>
+                <select id="gender">
+                    <option value="Man">Man</option>
+                    <option value="Vrouw">Vrouw</option>
+                    <option value="Intersex">Intersex</option>
+                </select>
             </div>
+
 
             <!-- Contactgegevens -->
             <div class="card" id="contact-info">
@@ -171,5 +186,6 @@
 <script src="../JS/home.js"></script>
 <script src="../JS/darkmode.js"></script>
 <script src="../JS/login.js"></script>
+<script src="../JS/write.js"></script>
 
 </html>

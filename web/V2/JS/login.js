@@ -17,6 +17,7 @@ pincodeForm.addEventListener('submit', function (event) {
         // If correct, hide login section and show the content section
         loginSection.style.display = 'none';
         contentSection.style.display = 'block';
+        loginError.style.display = 'none'; // Hide error message if previously shown
     } else {
         // If incorrect, display an error message
         loginError.style.display = 'block';
