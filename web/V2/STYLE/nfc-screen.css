@@ -1,0 +1,92 @@
+#nfc-screen-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #121212;
+    z-index: 999;
+    visibility: visible;
+}
+
+#nfc-screen-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #121212;
+    z-index: 999;
+    visibility: hidden;
+}
+
+.nfc-prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fade-in 1.5s ease;
+    z-index: 1;
+}
+
+.nfc-prompt h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+.nfc-prompt p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.progress-ring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+}
+
+.ring {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #d1d8e0;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+#nfc-screen-2.show {
+    visibility: visible;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

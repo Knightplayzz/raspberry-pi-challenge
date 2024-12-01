@@ -147,3 +147,22 @@ body.dark-mode #pincode-form input::placeholder {
     color: #aaa;
     /* Placeholder-tekst in donkergrijs */
 }
+
+body.dark-mode #nfc-screen {
+    background-color: #121212;
+    color: #ddd;
+}
+
+body.dark-mode .nfc-prompt h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .nfc-prompt p {
+    color: #bbb;
+}
+
+body.dark-mode .ring {
+    border: 4px solid #333;
+    border-top: 4px solid #4CAF50;
+    /* Green accent for dark mode */
+}

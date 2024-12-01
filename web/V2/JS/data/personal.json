@@ -1,0 +1,42 @@
+{
+    "personalInfo": {
+        "firstName": "Jan",
+        "lastName": "Jansen",
+        "middleName": "van der",
+        "birthDate": "01-01-1980",
+        "gender": "Man"
+    },
+    "contactInfo": {
+        "address": "Hoofdstraat 123",
+        "zipcode": "1234 AB",
+        "phone": "0612345678",
+        "emergency": "0612345678",
+        "donor": "yes"
+    },
+    "medicalInfo": {
+        "bloodType": "O+",
+        "allergies": "Pinda's, Bijensteken",
+        "conditions": "Astma",
+        "medication": "Paracetamol, 500 mg, 2x per dag",
+        "medicalNotes": "Nothing"
+    },
+    "medicalHistory": {
+        "history": "Hartoperatie, 2015",
+        "hospitalizations": "Longontsteking, 2018",
+        "historyNotes": "NOTE 1 TEST 123"
+    },
+    "vaccinations": {
+        "vaccines": [
+            {
+                "name": "COVID-19 Vaccine",
+                "date": "2023-01-15"
+            }
+        ]
+    },
+    "lifestyleInfo": {
+        "smokingStatus": "unknown",
+        "alcoholUse": "unknown",
+        "diet": "Geen special dieet",
+        "exercise": "5x per week"
+    }
+}

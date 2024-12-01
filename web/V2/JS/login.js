@@ -1,25 +1,18 @@
-// The correct pincode for login (you can change it as needed)
-const correctPincode = '1234'; // Replace with the actual pincode
-
-// Get references to the elements
-const pincodeForm = document.getElementById('pincode-form');
-const pincodeInput = document.getElementById('pincode');
-const loginSection = document.getElementById('login-section');
-const contentSection = document.getElementById('content-section');
+const correctPincode = '1234';
 const loginError = document.getElementById('login-error');
 
-// Event listener for pincode form submission
-pincodeForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission
+document.getElementById('pincode-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (document.getElementById('pincode').value === correctPincode) {
+        document.getElementById('login-section').classList.add("hidden-screen");
+        loginError.style.display = 'none';
 
-    // Check if the entered pincode is correct
-    if (pincodeInput.value === correctPincode) {
-        // If correct, hide login section and show the content section
-        loginSection.style.display = 'none';
-        contentSection.style.display = 'block';
-        loginError.style.display = 'none'; // Hide error message if previously shown
-    } else {
-        // If incorrect, display an error message
-        loginError.style.display = 'block';
-    }
+        //start scanning code
+        document.getElementById('nfc-screen-2').classList.add("show");
+        setTimeout(() => {
+            document.getElementById('nfc-screen-2').classList.remove("show");
+            document.getElementById('nfc-screen-2').classList.add("hidden-screen");
+            document.getElementById('content-section').style.display = "block";
+        }, 5000);
+    } else loginError.style.display = 'block';
 });

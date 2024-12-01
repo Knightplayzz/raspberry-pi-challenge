@@ -42,26 +42,16 @@ const data = {
 function addVaccine() {
     const vaccineName = document.getElementById("new-vaccine").value.trim();
     const vaccineDate = document.getElementById("vaccine-date").value.trim();
-
-    if (!vaccineName || !vaccineDate) {
-        alert("Vul zowel de naam als de datum van de vaccinatie in.");
-        return;
-    }
-
+    if (!vaccineName || !vaccineDate) return alert("Vul zowel de naam als de datum van de vaccinatie in.");
     data.vaccinations.vaccines.push({ name: vaccineName, date: vaccineDate });
     updateVaccineList();
-
-    // Clear input fields
     document.getElementById("new-vaccine").value = '';
     document.getElementById("vaccine-date").value = '';
 }
 
 function removeVaccine(index) {
     const vaccine = data.vaccinations.vaccines[index];
-    const confirmRemoval = confirm(
-        `Weet je zeker dat je vaccinatie "${vaccine.name}" van ${vaccine.date} wilt verwijderen?`
-    );
-
+    const confirmRemoval = confirm(`Weet je zeker dat je vaccinatie "${vaccine.name}" van ${vaccine.date} wilt verwijderen?`);
     if (confirmRemoval) {
         data.vaccinations.vaccines.splice(index, 1);
         updateVaccineList();
@@ -70,16 +60,13 @@ function removeVaccine(index) {
 
 function updateVaccineList() {
     const vaccineList = document.getElementById("vaccination-list");
-    vaccineList.innerHTML = ''; // Clear current list
-
+    vaccineList.innerHTML = '';
     data.vaccinations.vaccines.forEach((vaccine, index) => {
         const vaccineItem = document.createElement("div");
 
-        // Name and date display
         const vaccineText = document.createElement("span");
         vaccineText.textContent = `${vaccine.name} (${vaccine.date})`;
 
-        // Remove button
         const removeButton = document.createElement("button");
         removeButton.textContent = "X";
         removeButton.onclick = () => removeVaccine(index);

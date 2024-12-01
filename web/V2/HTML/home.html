@@ -8,9 +8,31 @@
     <link rel="stylesheet" href="../STYLE/home.css">
     <link id="dark-mode-css" rel="stylesheet" href="../STYLE/darkmode.css">
     <link rel="stylesheet" href="../STYLE/login.css">
+    <link rel="stylesheet" href="../STYLE/nfc-screen.css">
 </head>
 
 <body>
+    <div id="nfc-screen-1">
+        <div class="gradient-background"></div>
+        <div class="nfc-prompt">
+            <h1>Please Scan Your Card</h1>
+            <p>Hold your NFC card close to the scanner to proceed.</p>
+            <div class="progress-ring">
+                <div class="ring"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="nfc-screen-2">
+        <div class="gradient-background"></div>
+        <div class="nfc-prompt">
+            <h1>Please Scan Your Patients Card</h1>
+            <p>Hold your NFC card close to the scanner to proceed.</p>
+            <div class="progress-ring">
+                <div class="ring"></div>
+            </div>
+        </div>
+    </div>
 
     <div id="login-section">
         <h2>Doctor Access</h2>
@@ -23,7 +45,7 @@
 
     <div class="container">
 
-        <div id="content-section" style="display: none;">
+        <div id="content-section">
             <div class="header">
                 <h1>Medische Gegevens</h1>
                 <label class="dark-mode-toggle">
@@ -179,15 +201,12 @@
             </div>
             <button id="save-button">Opslaan</button>
         </div>
-
-
-        <!-- Opslaan -->
-
     </div>
 </body>
 <script src="../JS/home.js"></script>
 <script src="../JS/darkmode.js"></script>
 <script src="../JS/login.js"></script>
 <script src="../JS/write.js"></script>
+<script src="../JS/nfc.js"></script>
 
 </html>
