@@ -17,17 +17,25 @@ const data = {
         bloodType: "O+",
         allergies: "Pinda's, Bijensteken",
         conditions: "Astma",
-        medication: "Paracetamol, 500 mg, 2x per dag"
+        medication: "Paracetamol, 500 mg, 2x per dag",
+        medicalNotes: "Nothing"
     },
     medicalHistory: {
         history: "Hartoperatie, 2015",
-        hospitalizations: "Longontsteking, 2018"
+        hospitalizations: "Longontsteking, 2018",
+        historyNotes: "NOTE 1 TEST 123"
     },
     vaccinations: {
         vaccines: [{
             name: "COVID-19 Vaccine",
             date: "2023-01-15"
         }]
+    },
+    lifestyleInfo: {
+        smokingStatus: "unknown",
+        alcoholUse: "unknown",
+        diet: "Geen special dieet",
+        exercise: "5x per week"
     }
 };
 
@@ -84,7 +92,6 @@ function updateVaccineList() {
 
 function loadMedicalData() {
     // Personal Information
-    console.log(data.personalInfo);
     document.getElementById("first-name").value = data.personalInfo.firstName;
     document.getElementById("last-name").value = data.personalInfo.lastName || '';
     document.getElementById("middle-name").value = data.personalInfo.middleName || '';
@@ -103,11 +110,18 @@ function loadMedicalData() {
     document.getElementById("allergies").value = data.medicalInfo.allergies || '';
     document.getElementById("conditions").value = data.medicalInfo.conditions || '';
     document.getElementById("medication").value = data.medicalInfo.medication || '';
+    document.getElementById("medical-notes").value = data.medicalInfo.medicalNotes || '';
 
     // Medical History
-    document.getElementById("medical-notes").value = data.medicalHistory.history || '';
-    document.getElementById("history-notes").value = data.medicalHistory.hospitalizations || '';
+    document.getElementById("history").value = data.medicalHistory.history || '';
+    document.getElementById("hospitalizations").value = data.medicalHistory.hospitalizations || '';
+    document.getElementById("history-notes").value = data.medicalHistory.historyNotes || '';
 
+    // Lifestyle
+    document.getElementById("smoking-status").value = data.lifestyleInfo.smokingStatus || '';
+    document.getElementById("alcohol-use").value = data.lifestyleInfo.alcoholUse || '';
+    document.getElementById("diet").value = data.lifestyleInfo.diet || '';
+    document.getElementById("exercise").value = data.lifestyleInfo.exercise || '';
     // Vaccinations
     updateVaccineList(); // Update vaccine list dynamically
 }
