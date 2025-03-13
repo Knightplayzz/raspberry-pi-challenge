@@ -1,32 +1,23 @@
-const NFC = require('nfc-pcsc');
-
-const nfc = new NFC(); // Create an instance of the NFC reader
+const { NFC } = require('nfc-pcsc');
+const nfc = new NFC(); // Create an NFC instance
 
 nfc.on('reader', reader => {
-    console.log(`Reader detected: ${reader.name}`);
+    console.log(`Reader detected: ${reader.reader.name}`);
 
     reader.on('card', card => {
-        console.log(`Card detected: `, card);
-
-        // Example: read data from card
-        reader.read(4, 16) // Read 16 bytes from block 4
-            .then(data => {
-                console.log('Data read:', data.toString('utf8'));
-            })
-            .catch(err => {
-                console.error('Error reading data:', err);
-            });
+        console.log(`Card detected! UID: ${card.uid}`);
+        // You can also interact with the card's data here
     });
 
     reader.on('error', err => {
-        console.error(`Reader error: ${err}`);
+        console.error('Error:', err);
     });
 
     reader.on('end', () => {
-        console.log(`Reader ${reader.name} disconnected.`);
+        console.log('Reader disconnected');
     });
 });
 
 nfc.on('error', err => {
-    console.error(`NFC error: ${err}`);
+    console.error('Error:', err);
 });

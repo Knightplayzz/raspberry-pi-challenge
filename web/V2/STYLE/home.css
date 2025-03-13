@@ -22,29 +22,28 @@ body {
 }
 
 .sidebar {
-    width: 150px;
+    width: 140px;
     background-color: #007bff;
     color: white;
     padding: 20px;
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    overflow-y: auto;
-    z-index: 1000;
-}
-
-.sidebar h2 {
-    margin-top: 0;
+    top: 40px;
+    bottom: 40px;
+    left: 20px;
+    overflow: hidden;
+    border-radius: 25px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-}
-
-.sidebar ul li {
-    margin: 20px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Small gap between items */
 }
 
 .sidebar ul li a {
@@ -150,4 +149,17 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+
+@media (max-width: 900px) {
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
 }

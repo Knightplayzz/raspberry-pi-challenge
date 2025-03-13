@@ -1,44 +1,93 @@
-// const data = {
-//     personalInfo: {
-//         firstName: "Jan",
-//         lastName: "Jansen",
-//         middleName: "van der",
-//         birthDate: "01-01-1980",
-//         gender: "Man"
-//     },
-//     contactInfo: {
-//         address: "Hoofdstraat 123",
-//         zipcode: "1234 AB",
-//         phone: "0612345678",
-//         emergency: "0612345678",
-//         donor: "yes"
-//     },
-//     medicalInfo: {
-//         bloodType: "O+",
-//         allergies: "Pinda's, Bijensteken",
-//         conditions: "Astma",
-//         medication: "Paracetamol, 500 mg, 2x per dag",
-//         medicalNotes: "Nothing"
-//     },
-//     medicalHistory: {
-//         history: "Hartoperatie, 2015",
-//         hospitalizations: "Longontsteking, 2018",
-//         historyNotes: "NOTE 1 TEST 123"
-//     },
-//     vaccinations: {
-//         vaccines: [{
-//             name: "COVID-19 Vaccine",
-//             date: "2023-01-15"
-//         }]
-//     },
-//     lifestyleInfo: {
-//         smokingStatus: "unknown",
-//         alcoholUse: "unknown",
-//         diet: "Geen special dieet",
-//         exercise: "5x per week"
-//     }
-// };
-const data = {};
+const data = {
+    personalInfo: {
+        firstName: "Simon",
+        lastName: "Kuijf",
+        middleName: "Felix",
+        birthDate: "10-06-2007",
+        gender: "Man"
+    },
+    contactInfo: {
+        address: "Athoslaan 91",
+        zipcode: "6213 CC",
+        phone: "0655931268",
+        emergency: "0618265631",
+        donor: "unknown"
+    },
+    medicalInfo: {
+        bloodType: "unknown",
+        allergies: "-",
+        conditions: "-",
+        medication: "-",
+        medicalNotes: "-"
+    },
+    medicalHistory: {
+        history: "-",
+        hospitalizations: "2x arm operation (2013)",
+        historyNotes: "-"
+    },
+    vaccinations: {
+        vaccines: [{
+            name: "Rota",
+            date: "2008-10-15"
+        },
+        {
+            name: "DKTP-Hib-HepB",
+            date: "2008-6-06"
+        },
+        {
+            name: "Pneu",
+            date: "2008-10-15"
+        },
+        {
+            name: "BMR",
+            date: "2008-01-15"
+        },
+        {
+            name: "MenACWY",
+            date: "2008-01-15"
+        },
+        {
+            name: "DKTP",
+            date: "2011-01-15"
+        },
+        {
+            name: "DTP",
+            date: "2016-01-15"
+        },
+        {
+            name: "BMR",
+            date: "2016-01-15"
+        },
+        {
+            name: "HPV",
+            date: "20017-01-15"
+        },
+        {
+            name: "MenACWY",
+            date: "2021-01-15"
+        }]
+    },
+    lifestyleInfo: {
+        smokingStatus: "no",
+        alcoholUse: "occasionally",
+        diet: "Geen special dieet",
+        exercise: "3x per week"
+    }
+};
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     fetch('../JS/data/personal.json')
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error("JSON bestand niet gevonden");
+//             }
+//             return response.json();
+//         })
+//         .then(data => {
+//             loadMedicalData(data);
+//         })
+//         .catch(error => console.error("Fout bij laden van gegevens:", error));
+// });
 
 function addVaccine() {
     const vaccineName = document.getElementById("new-vaccine").value.trim();

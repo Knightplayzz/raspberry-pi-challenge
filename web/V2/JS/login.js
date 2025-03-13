@@ -14,6 +14,6 @@ document.getElementById('pincode-form').addEventListener('submit', function (eve
             document.getElementById('nfc-screen-2').classList.add("hidden-screen");
             document.getElementById('content-section').style.display = "block";
             document.getElementById('personal-info').style.display = "block";
-        }, 5000);
+        }, 2000);
     } else loginError.style.display = 'block';
 });
