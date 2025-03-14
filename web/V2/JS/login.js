@@ -9,11 +9,12 @@ document.getElementById('pincode-form').addEventListener('submit', function (eve
 
         //start scanning code
         document.getElementById('nfc-screen-2').classList.add("show");
-        setTimeout(() => {
+        document.addEventListener('keydown', function (event) {
+            if (event.key !== 'Enter') return;
             document.getElementById('nfc-screen-2').classList.remove("show");
             document.getElementById('nfc-screen-2').classList.add("hidden-screen");
             document.getElementById('content-section').style.display = "block";
             document.getElementById('personal-info').style.display = "block";
-        }, 2000);
+        });
     } else loginError.style.display = 'block';
 });

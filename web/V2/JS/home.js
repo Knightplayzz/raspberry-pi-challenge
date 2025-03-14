@@ -1,21 +1,21 @@
 const data = {
     personalInfo: {
-        firstName: "Simon",
-        lastName: "Kuijf",
-        middleName: "Felix",
-        birthDate: "10-06-2007",
+        firstName: "Pieter",
+        lastName: "Jansen",
+        middleName: "Bob",
+        birthDate: "12-06-1999",
         gender: "Man"
     },
     contactInfo: {
-        address: "Athoslaan 91",
-        zipcode: "6213 CC",
-        phone: "0655931268",
-        emergency: "0618265631",
-        donor: "unknown"
+        address: "Normannensingel 50",
+        zipcode: "6224BW",
+        phone: "0612312312",
+        emergency: "0645645645",
+        donor: "ja"
     },
     medicalInfo: {
-        bloodType: "unknown",
-        allergies: "-",
+        bloodType: "A-",
+        allergies: "hooikoorts",
         conditions: "-",
         medication: "-",
         medicalNotes: "-"
@@ -68,8 +68,8 @@ const data = {
         }]
     },
     lifestyleInfo: {
-        smokingStatus: "no",
-        alcoholUse: "occasionally",
+        smokingStatus: "ja",
+        alcoholUse: "meestal",
         diet: "Geen special dieet",
         exercise: "3x per week"
     }
