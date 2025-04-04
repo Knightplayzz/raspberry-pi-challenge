@@ -1,0 +1,31 @@
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select select {
+    appearance: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-select select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.language-select {
+    position: relative;
+    top: -40px;
+    float: right;
+    clear: both;
+}
+
+#flags{
+    position: relative;
+    top: 8px;
+}

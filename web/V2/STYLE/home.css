@@ -151,7 +151,6 @@ button:hover {
     box-sizing: border-box;
 }
 
-
 @media (max-width: 900px) {
     .sidebar ul {
         list-style: none;

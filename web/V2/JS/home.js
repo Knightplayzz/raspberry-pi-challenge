@@ -11,19 +11,11 @@ const data = {
         zipcode: "6224BW",
         phone: "0612312312",
         emergency: "0645645645",
-        donor: "ja"
+        donor: "yes"
     },
     medicalInfo: {
         bloodType: "A-",
-        allergies: "hooikoorts",
-        conditions: "-",
-        medication: "-",
-        medicalNotes: "-"
-    },
-    medicalHistory: {
-        history: "-",
-        hospitalizations: "2x arm operation (2013)",
-        historyNotes: "-"
+        medication: "Flixotide",
     },
     vaccinations: {
         vaccines: [{
@@ -68,26 +60,10 @@ const data = {
         }]
     },
     lifestyleInfo: {
-        smokingStatus: "ja",
-        alcoholUse: "meestal",
-        diet: "Geen special dieet",
-        exercise: "3x per week"
+        smokingStatus: "yes",
+        alcoholUse: "frequently",
     }
 };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     fetch('../JS/data/personal.json')
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error("JSON bestand niet gevonden");
-//             }
-//             return response.json();
-//         })
-//         .then(data => {
-//             loadMedicalData(data);
-//         })
-//         .catch(error => console.error("Fout bij laden van gegevens:", error));
-// });
 
 function addVaccine() {
     const vaccineName = document.getElementById("new-vaccine").value.trim();
@@ -144,21 +120,13 @@ function loadMedicalData() {
 
     // Medical Information
     document.getElementById("blood-type").value = data.medicalInfo.bloodType || '';
-    document.getElementById("allergies").value = data.medicalInfo.allergies || '';
-    document.getElementById("conditions").value = data.medicalInfo.conditions || '';
-    document.getElementById("medication").value = data.medicalInfo.medication || '';
-    document.getElementById("medical-notes").value = data.medicalInfo.medicalNotes || '';
+    document.getElementById("medication").value = data.medication || '';
 
     // Medical History
-    document.getElementById("history").value = data.medicalHistory.history || '';
-    document.getElementById("hospitalizations").value = data.medicalHistory.hospitalizations || '';
-    document.getElementById("history-notes").value = data.medicalHistory.historyNotes || '';
 
     // Lifestyle
     document.getElementById("smoking-status").value = data.lifestyleInfo.smokingStatus || '';
     document.getElementById("alcohol-use").value = data.lifestyleInfo.alcoholUse || '';
-    document.getElementById("diet").value = data.lifestyleInfo.diet || '';
-    document.getElementById("exercise").value = data.lifestyleInfo.exercise || '';
     // Vaccinations
     updateVaccineList(); // Update vaccine list dynamically
 }
